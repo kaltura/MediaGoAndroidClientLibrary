@@ -62,6 +62,16 @@ public class ErrorElement {
         switch (code) {
             case 404:
                 return ErrorElement.NotFound.message(message);
+            case 666:
+                return ErrorElement.GeneralError.message(message);
+            case 500:
+                return ErrorElement.LoadError.message(message);
+            case 503:
+                return ErrorElement.ServiceUnavailableError.message(message);
+            case 408:
+                return ErrorElement.ConnectionError.message(message);
+            case 601:
+                return ErrorElement.SessionError.message(message);
             case 400:
                 return ErrorElement.BadRequestError.message(message);
             default:
@@ -84,7 +94,7 @@ public class ErrorElement {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        if(name != null){
+        if (name != null) {
             builder.append("Error: ").append(name).append("; ");
         }
         builder.append("code:").append(code).append(", Message:").append(message);
