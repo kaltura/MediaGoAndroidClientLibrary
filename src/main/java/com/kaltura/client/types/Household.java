@@ -35,6 +35,8 @@ import com.kaltura.client.types.ObjectBase;
 import com.kaltura.client.utils.GsonParser;
 import com.kaltura.client.utils.request.MultiRequestBuilder;
 
+import java.util.List;
+
 /**
  * This class was generated using clients-generator\exec.php
  * against an XML schema provided by Kaltura.
@@ -127,6 +129,18 @@ public class Household extends ObjectBase {
 	 * suspended roleId
 	 */
 	private Integer roleId;
+	/**
+	 * master users
+	 */
+	private List<BaseOTTUser> masterUsers;
+	/**
+	 * users
+	 */
+	private List<BaseOTTUser> users;
+	/**
+	 * deviceFamilies
+	 */
+	private List<DeviceFamily> deviceFamilies;
 
 	// id:
 	public Long getId(){
@@ -212,6 +226,18 @@ public class Household extends ObjectBase {
 	public Integer getRoleId(){
 		return this.roleId;
 	}
+	// masterUsers:
+	public List<BaseOTTUser> getMasterUsers(){
+		return this.masterUsers;
+	}
+	// users:
+	public List<BaseOTTUser> getUsers(){
+		return this.users;
+	}
+	// users:
+	public List<DeviceFamily> getDeviceFamilies(){
+		return this.deviceFamilies;
+	}
 
 	public Household() {
 		super();
@@ -238,6 +264,9 @@ public class Household extends ObjectBase {
 		frequencyNextUserAction = GsonParser.parseLong(jsonObject.get("frequencyNextUserAction"));
 		restriction = HouseholdRestriction.get(GsonParser.parseString(jsonObject.get("restriction")));
 		roleId = GsonParser.parseInt(jsonObject.get("roleId"));
+		masterUsers = GsonParser.parseArray(jsonObject.getAsJsonArray("masterUsers"), BaseOTTUser.class);
+		users = GsonParser.parseArray(jsonObject.getAsJsonArray("users"), BaseOTTUser.class);
+		deviceFamilies = GsonParser.parseArray(jsonObject.getAsJsonArray("deviceFamilies"), DeviceFamily.class);
 
 	}
 

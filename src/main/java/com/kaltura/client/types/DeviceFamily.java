@@ -29,7 +29,10 @@ package com.kaltura.client.types;
 
 import com.google.gson.JsonObject;
 import com.kaltura.client.Params;
+import com.kaltura.client.utils.GsonParser;
 import com.kaltura.client.utils.request.MultiRequestBuilder;
+
+import java.util.List;
 
 /**
  * This class was generated using clients-generator\exec.php
@@ -46,9 +49,44 @@ import com.kaltura.client.utils.request.MultiRequestBuilder;
 public class DeviceFamily extends DeviceFamilyBase {
 	
 	public interface Tokenizer extends DeviceFamilyBase.Tokenizer {
+		String deviceLimit();
+		String concurrentLimit();
 	}
 
+	/**
+	 * Max number of devices allowed for this family
+	 */
+	private Integer deviceLimit;
+	/**
+	 * Max number of streams allowed for this family
+	 */
+	private Integer concurrentLimit;
+	/**
+	 * devices
+	 */
+	private List<HouseholdDevice> devices;
 
+	// deviceLimit:
+	public Integer getDeviceLimit(){
+		return this.deviceLimit;
+	}
+	public void deviceLimit(String multirequestToken){
+		setToken("deviceLimit", multirequestToken);
+	}
+
+	// concurrentLimit:
+	public void setConcurrentLimit(Integer concurrentLimit){
+		this.concurrentLimit = concurrentLimit;
+	}
+
+	public void concurrentLimit(String multirequestToken){
+		setToken("concurrentLimit", multirequestToken);
+	}
+
+	// devices:
+	public List<HouseholdDevice> getDevices(){
+		return this.devices;
+	}
 
 	public DeviceFamily() {
 		super();
@@ -56,11 +94,17 @@ public class DeviceFamily extends DeviceFamilyBase {
 
 	public DeviceFamily(JsonObject jsonObject) throws APIException {
 		super(jsonObject);
+
+		deviceLimit = GsonParser.parseInt(jsonObject.get("deviceLimit"));
+		concurrentLimit = GsonParser.parseInt(jsonObject.get("concurrentLimit"));
+		devices = GsonParser.parseArray(jsonObject.getAsJsonArray("devices"), HouseholdDevice.class);
 	}
 
 	public Params toParams() {
 		Params kparams = super.toParams();
 		kparams.add("objectType", "KalturaDeviceFamily");
+		kparams.add("deviceLimit", this.deviceLimit);
+		kparams.add("concurrentLimit", this.concurrentLimit);
 		return kparams;
 	}
 
