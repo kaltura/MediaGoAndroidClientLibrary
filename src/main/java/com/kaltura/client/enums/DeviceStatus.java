@@ -34,6 +34,8 @@ package com.kaltura.client.enums;
  * MANUAL CHANGES TO THIS CLASS WILL BE OVERWRITTEN.
  */
 public enum DeviceStatus implements EnumAsString {
+	NOT_EXIST("NOT_EXIST"),
+	MAX_DEVICES("MAX_DEVICES"),
 	PENDING("PENDING"),
 	ACTIVATED("ACTIVATED"),
 	NOT_ACTIVATED("NOT_ACTIVATED");
