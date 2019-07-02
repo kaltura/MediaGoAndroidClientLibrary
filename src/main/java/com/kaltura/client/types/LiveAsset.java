@@ -292,6 +292,10 @@ public class LiveAsset extends MediaAsset {
 		super();
 	}
 
+	public LiveAsset(Asset asset) {
+		super(asset);
+	}
+
 	public LiveAsset(JsonObject jsonObject) throws APIException {
 		super(jsonObject);
 
@@ -334,5 +338,27 @@ public class LiveAsset extends MediaAsset {
 		return kparams;
 	}
 
+	public String getLogoUrl() {
+		MediaImage imageInfo = null;
+		if (getImages() != null) {
+			imageInfo = getFirstImageByRatio("2:1");
+			if (imageInfo == null) {
+				imageInfo = getFirstImageByRatio("1:1");
+			}
+			if (imageInfo == null){
+				imageInfo = getFirstImageByRatio("16:9");
+			}
+		}
+		return imageInfo != null ? imageInfo.getUrl() : null;
+	}
+
+	private MediaImage getFirstImageByRatio(String ratio) {
+		for (MediaImage mediaImage : getImages()) {
+			if (ratio.equals(mediaImage.getRatio())) {
+				return mediaImage;
+			}
+		}
+		return getImages().get(0);
+	}
 }
 

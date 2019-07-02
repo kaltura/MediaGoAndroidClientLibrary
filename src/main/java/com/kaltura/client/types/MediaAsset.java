@@ -158,6 +158,10 @@ public class MediaAsset extends Asset {
 		super();
 	}
 
+	public MediaAsset(Asset asset) {
+		super(asset);
+	}
+
 	public MediaAsset(JsonObject jsonObject) throws APIException {
 		super(jsonObject);
 

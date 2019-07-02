@@ -32,10 +32,12 @@ import com.kaltura.client.Params;
 import com.kaltura.client.utils.GsonParser;
 import com.kaltura.client.utils.request.MultiRequestBuilder;
 
+import java.util.Date;
+
 /**
  * This class was generated using clients-generator\exec.php
  * against an XML schema provided by Kaltura.
- * 
+ * <p>
  * MANUAL CHANGES TO THIS CLASS WILL BE OVERWRITTEN.
  */
 
@@ -45,183 +47,241 @@ import com.kaltura.client.utils.request.MultiRequestBuilder;
 @SuppressWarnings("serial")
 @MultiRequestBuilder.Tokenizer(ProgramAsset.Tokenizer.class)
 public class ProgramAsset extends Asset {
-	
-	public interface Tokenizer extends Asset.Tokenizer {
-		String epgChannelId();
-		String epgId();
-		String relatedMediaId();
-		String crid();
-		String linearAssetId();
-		String enableCdvr();
-		String enableCatchUp();
-		String enableStartOver();
-		String enableTrickPlay();
-	}
 
-	/**
-	 * EPG channel identifier
-	 */
-	private Long epgChannelId;
-	/**
-	 * EPG identifier
-	 */
-	private String epgId;
-	/**
-	 * Ralated media identifier
-	 */
-	private Long relatedMediaId;
-	/**
-	 * Unique identifier for the program
-	 */
-	private String crid;
-	/**
-	 * Id of linear media asset
-	 */
-	private Long linearAssetId;
-	/**
-	 * Is CDVR enabled for this asset
-	 */
-	private Boolean enableCdvr;
-	/**
-	 * Is catch-up enabled for this asset
-	 */
-	private Boolean enableCatchUp;
-	/**
-	 * Is start over enabled for this asset
-	 */
-	private Boolean enableStartOver;
-	/**
-	 * Is trick-play enabled for this asset
-	 */
-	private Boolean enableTrickPlay;
+    public interface Tokenizer extends Asset.Tokenizer {
+        String epgChannelId();
 
-	// epgChannelId:
-	public Long getEpgChannelId(){
-		return this.epgChannelId;
-	}
-	// epgId:
-	public String getEpgId(){
-		return this.epgId;
-	}
-	// relatedMediaId:
-	public Long getRelatedMediaId(){
-		return this.relatedMediaId;
-	}
-	public void setRelatedMediaId(Long relatedMediaId){
-		this.relatedMediaId = relatedMediaId;
-	}
+        String epgId();
 
-	public void relatedMediaId(String multirequestToken){
-		setToken("relatedMediaId", multirequestToken);
-	}
+        String relatedMediaId();
 
-	// crid:
-	public String getCrid(){
-		return this.crid;
-	}
-	public void setCrid(String crid){
-		this.crid = crid;
-	}
+        String crid();
 
-	public void crid(String multirequestToken){
-		setToken("crid", multirequestToken);
-	}
+        String linearAssetId();
 
-	// linearAssetId:
-	public Long getLinearAssetId(){
-		return this.linearAssetId;
-	}
-	public void setLinearAssetId(Long linearAssetId){
-		this.linearAssetId = linearAssetId;
-	}
+        String enableCdvr();
 
-	public void linearAssetId(String multirequestToken){
-		setToken("linearAssetId", multirequestToken);
-	}
+        String enableCatchUp();
 
-	// enableCdvr:
-	public Boolean getEnableCdvr(){
-		return this.enableCdvr;
-	}
-	public void setEnableCdvr(Boolean enableCdvr){
-		this.enableCdvr = enableCdvr;
-	}
+        String enableStartOver();
 
-	public void enableCdvr(String multirequestToken){
-		setToken("enableCdvr", multirequestToken);
-	}
+        String enableTrickPlay();
+    }
 
-	// enableCatchUp:
-	public Boolean getEnableCatchUp(){
-		return this.enableCatchUp;
-	}
-	public void setEnableCatchUp(Boolean enableCatchUp){
-		this.enableCatchUp = enableCatchUp;
-	}
+    /**
+     * EPG channel identifier
+     */
+    private Long epgChannelId;
+    /**
+     * EPG identifier
+     */
+    private String epgId;
+    /**
+     * Ralated media identifier
+     */
+    private Long relatedMediaId;
+    /**
+     * Unique identifier for the program
+     */
+    private String crid;
+    /**
+     * Id of linear media asset
+     */
+    private Long linearAssetId;
+    /**
+     * Is CDVR enabled for this asset
+     */
+    private Boolean enableCdvr;
+    /**
+     * Is catch-up enabled for this asset
+     */
+    private Boolean enableCatchUp;
+    /**
+     * Is start over enabled for this asset
+     */
+    private Boolean enableStartOver;
+    /**
+     * Is trick-play enabled for this asset
+     */
+    private Boolean enableTrickPlay;
 
-	public void enableCatchUp(String multirequestToken){
-		setToken("enableCatchUp", multirequestToken);
-	}
+    // epgChannelId:
+    public Long getEpgChannelId() {
+        return this.epgChannelId;
+    }
 
-	// enableStartOver:
-	public Boolean getEnableStartOver(){
-		return this.enableStartOver;
-	}
-	public void setEnableStartOver(Boolean enableStartOver){
-		this.enableStartOver = enableStartOver;
-	}
+    // epgId:
+    public String getEpgId() {
+        return this.epgId;
+    }
 
-	public void enableStartOver(String multirequestToken){
-		setToken("enableStartOver", multirequestToken);
-	}
+    // relatedMediaId:
+    public Long getRelatedMediaId() {
+        return this.relatedMediaId;
+    }
 
-	// enableTrickPlay:
-	public Boolean getEnableTrickPlay(){
-		return this.enableTrickPlay;
-	}
-	public void setEnableTrickPlay(Boolean enableTrickPlay){
-		this.enableTrickPlay = enableTrickPlay;
-	}
+    public void setRelatedMediaId(Long relatedMediaId) {
+        this.relatedMediaId = relatedMediaId;
+    }
 
-	public void enableTrickPlay(String multirequestToken){
-		setToken("enableTrickPlay", multirequestToken);
-	}
+    public void relatedMediaId(String multirequestToken) {
+        setToken("relatedMediaId", multirequestToken);
+    }
+
+    // crid:
+    public String getCrid() {
+        return this.crid;
+    }
+
+    public void setCrid(String crid) {
+        this.crid = crid;
+    }
+
+    public void crid(String multirequestToken) {
+        setToken("crid", multirequestToken);
+    }
+
+    // linearAssetId:
+    public Long getLinearAssetId() {
+        return this.linearAssetId;
+    }
+
+    public void setLinearAssetId(Long linearAssetId) {
+        this.linearAssetId = linearAssetId;
+    }
+
+    public void linearAssetId(String multirequestToken) {
+        setToken("linearAssetId", multirequestToken);
+    }
+
+    // enableCdvr:
+    public Boolean getEnableCdvr() {
+        return this.enableCdvr;
+    }
+
+    public void setEnableCdvr(Boolean enableCdvr) {
+        this.enableCdvr = enableCdvr;
+    }
+
+    public void enableCdvr(String multirequestToken) {
+        setToken("enableCdvr", multirequestToken);
+    }
+
+    // enableCatchUp:
+    public Boolean getEnableCatchUp() {
+        return this.enableCatchUp;
+    }
+
+    public void setEnableCatchUp(Boolean enableCatchUp) {
+        this.enableCatchUp = enableCatchUp;
+    }
+
+    public void enableCatchUp(String multirequestToken) {
+        setToken("enableCatchUp", multirequestToken);
+    }
+
+    // enableStartOver:
+    public Boolean getEnableStartOver() {
+        return this.enableStartOver;
+    }
+
+    public void setEnableStartOver(Boolean enableStartOver) {
+        this.enableStartOver = enableStartOver;
+    }
+
+    public void enableStartOver(String multirequestToken) {
+        setToken("enableStartOver", multirequestToken);
+    }
+
+    // enableTrickPlay:
+    public Boolean getEnableTrickPlay() {
+        return this.enableTrickPlay;
+    }
+
+    public void setEnableTrickPlay(Boolean enableTrickPlay) {
+        this.enableTrickPlay = enableTrickPlay;
+    }
+
+    public void enableTrickPlay(String multirequestToken) {
+        setToken("enableTrickPlay", multirequestToken);
+    }
 
 
-	public ProgramAsset() {
-		super();
-	}
+    public ProgramAsset() {
+        super();
+    }
 
-	public ProgramAsset(JsonObject jsonObject) throws APIException {
-		super(jsonObject);
+    public ProgramAsset(JsonObject jsonObject) throws APIException {
+        super(jsonObject);
 
-		if(jsonObject == null) return;
+        if (jsonObject == null) return;
 
-		// set members values:
-		epgChannelId = GsonParser.parseLong(jsonObject.get("epgChannelId"));
-		epgId = GsonParser.parseString(jsonObject.get("epgId"));
-		relatedMediaId = GsonParser.parseLong(jsonObject.get("relatedMediaId"));
-		crid = GsonParser.parseString(jsonObject.get("crid"));
-		linearAssetId = GsonParser.parseLong(jsonObject.get("linearAssetId"));
-		enableCdvr = GsonParser.parseBoolean(jsonObject.get("enableCdvr"));
-		enableCatchUp = GsonParser.parseBoolean(jsonObject.get("enableCatchUp"));
-		enableStartOver = GsonParser.parseBoolean(jsonObject.get("enableStartOver"));
-		enableTrickPlay = GsonParser.parseBoolean(jsonObject.get("enableTrickPlay"));
+        // set members values:
+        epgChannelId = GsonParser.parseLong(jsonObject.get("epgChannelId"));
+        epgId = GsonParser.parseString(jsonObject.get("epgId"));
+        relatedMediaId = GsonParser.parseLong(jsonObject.get("relatedMediaId"));
+        crid = GsonParser.parseString(jsonObject.get("crid"));
+        linearAssetId = GsonParser.parseLong(jsonObject.get("linearAssetId"));
+        enableCdvr = GsonParser.parseBoolean(jsonObject.get("enableCdvr"));
+        enableCatchUp = GsonParser.parseBoolean(jsonObject.get("enableCatchUp"));
+        enableStartOver = GsonParser.parseBoolean(jsonObject.get("enableStartOver"));
+        enableTrickPlay = GsonParser.parseBoolean(jsonObject.get("enableTrickPlay"));
 
-	}
+    }
 
-	public Params toParams() {
-		Params kparams = super.toParams();
-		kparams.add("objectType", "KalturaProgramAsset");
-		kparams.add("relatedMediaId", this.relatedMediaId);
-		kparams.add("crid", this.crid);
-		kparams.add("linearAssetId", this.linearAssetId);
-		kparams.add("enableCdvr", this.enableCdvr);
-		kparams.add("enableCatchUp", this.enableCatchUp);
-		kparams.add("enableStartOver", this.enableStartOver);
-		kparams.add("enableTrickPlay", this.enableTrickPlay);
-		return kparams;
-	}
+    public ProgramAsset(Asset asset) {
+        super(asset);
+    }
 
+    public Params toParams() {
+        Params kparams = super.toParams();
+        kparams.add("objectType", "KalturaProgramAsset");
+        kparams.add("relatedMediaId", this.relatedMediaId);
+        kparams.add("crid", this.crid);
+        kparams.add("linearAssetId", this.linearAssetId);
+        kparams.add("enableCdvr", this.enableCdvr);
+        kparams.add("enableCatchUp", this.enableCatchUp);
+        kparams.add("enableStartOver", this.enableStartOver);
+        kparams.add("enableTrickPlay", this.enableTrickPlay);
+        return kparams;
+    }
+
+    public static class EmptyProgram extends ProgramAsset {
+        public EmptyProgram(long startTime, long endTime) {
+            setStartDate(startTime);
+            setEndDate(endTime);
+        }
+
+        @Override
+        public String getName() {
+            return "";
+        }
+    }
+
+    public int getProgramProgressForNow(int max) {
+        long totalduration = getEndDate() - getStartDate();
+        long delta = System.currentTimeMillis() - getStartDate();
+        return (int) (((float) delta / (float) totalduration) * (float) max);
+    }
+
+    public boolean isOnPresent() {
+        return !isOnPast() && !isOnFuture();
+    }
+
+    public boolean isOnPast() {
+        return getEndDate() < new Date().getTime();
+    }
+
+    public boolean isOnFuture() {
+        return getStartDate() > new Date().getTime();
+    }
+
+    public boolean isInTimeFrame(long start, long end) {
+        return (getEndDate() > start && getStartDate() < end);
+    }
+
+    public boolean isInTimeFrame(long time) {
+        return (getEndDate() > time && getStartDate() <= time);
+    }
 }
 

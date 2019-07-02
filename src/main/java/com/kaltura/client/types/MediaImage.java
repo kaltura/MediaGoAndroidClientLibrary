@@ -46,7 +46,15 @@ import com.kaltura.client.utils.request.MultiRequestBuilder;
 @SuppressWarnings("serial")
 @MultiRequestBuilder.Tokenizer(MediaImage.Tokenizer.class)
 public class MediaImage extends ObjectBase {
-	
+
+	public static MediaImage dummy;
+
+	static {
+		dummy = new MediaImage();
+		dummy.setUrl("");
+		dummy.setRatio("");
+	}
+
 	public interface Tokenizer extends ObjectBase.Tokenizer {
 		String ratio();
 		String width();
