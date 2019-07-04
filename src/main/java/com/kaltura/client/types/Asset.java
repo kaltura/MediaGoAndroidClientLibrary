@@ -203,6 +203,10 @@ public abstract class Asset extends ObjectBase {
         return this.name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     // multilingualName:
     public List<TranslationToken> getMultilingualName() {
         return this.multilingualName;
@@ -217,6 +221,10 @@ public abstract class Asset extends ObjectBase {
         return this.description;
     }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     // multilingualDescription:
     public List<TranslationToken> getMultilingualDescription() {
         return this.multilingualDescription;
@@ -229,6 +237,10 @@ public abstract class Asset extends ObjectBase {
     // images:
     public List<MediaImage> getImages() {
         return this.images;
+    }
+
+    public void setImages(List<MediaImage> images) {
+        this.images = images;
     }
 
     // mediaFiles:
@@ -470,6 +482,15 @@ public abstract class Asset extends ObjectBase {
         }
 
         return null;
+    }
+
+    public String getImageUrl(String ratio) {
+        String url = "";
+        for (MediaImage mediaImage : images) {
+            if (mediaImage.getRatio().equals(ratio))
+                url = mediaImage.getUrl();
+        }
+        return url;
     }
 }
 

@@ -110,6 +110,10 @@ public class ProgramAsset extends Asset {
         return this.epgChannelId;
     }
 
+    public void setEpgChannelId(Long epgChannelId) {
+        this.epgChannelId = epgChannelId;
+    }
+
     // epgId:
     public String getEpgId() {
         return this.epgId;

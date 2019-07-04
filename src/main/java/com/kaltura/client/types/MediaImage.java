@@ -175,6 +175,11 @@ public class MediaImage extends ObjectBase {
 		super();
 	}
 
+	public MediaImage(String ratio, String url) {
+		this.ratio = ratio;
+		this.url = url;
+	}
+
 	public MediaImage(JsonObject jsonObject) throws APIException {
 		super(jsonObject);
 
