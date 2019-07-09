@@ -268,7 +268,7 @@ public abstract class Asset extends ObjectBase {
 
     // startDate:
     public Long getStartDate() {
-        return this.startDate;
+        return this.startDate * 1000;
     }
 
     public void setStartDate(Long startDate) {
@@ -281,7 +281,7 @@ public abstract class Asset extends ObjectBase {
 
     // endDate:
     public Long getEndDate() {
-        return this.endDate;
+        return this.endDate * 1000;
     }
 
     public void setEndDate(Long endDate) {
