@@ -162,6 +162,11 @@ public class MediaAsset extends Asset {
 		super(asset);
 	}
 
+	public MediaAsset(MediaAsset asset) {
+		super(asset);
+		externalIds = asset.getExternalIds();
+	}
+
 	public MediaAsset(JsonObject jsonObject) throws APIException {
 		super(jsonObject);
 

@@ -33,6 +33,8 @@ import com.kaltura.client.utils.GsonParser;
 import com.kaltura.client.utils.request.MultiRequestBuilder;
 import com.kaltura.client.utils.request.RequestBuilder;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -103,7 +105,7 @@ public abstract class Asset extends ObjectBase {
     /**
      * Asset name
      */
-    private List<TranslationToken> multilingualName;
+    private List<TranslationToken> multilingualName = new ArrayList<>();
     /**
      * Asset description
      */
@@ -111,25 +113,25 @@ public abstract class Asset extends ObjectBase {
     /**
      * Asset description
      */
-    private List<TranslationToken> multilingualDescription;
+    private List<TranslationToken> multilingualDescription = new ArrayList<>();
     /**
      * Collection of images details that can be used to represent this asset
      */
-    private List<MediaImage> images;
+    private List<MediaImage> images = new ArrayList<>();
     /**
      * Files
      */
-    private List<MediaFile> mediaFiles;
+    private List<MediaFile> mediaFiles = new ArrayList<>();
     /**
      * Dynamic collection of key-value pairs according to the String Meta defined in
      * the system
      */
-    private Map<String, Value> metas;
+    private Map<String, Value> metas = new HashMap<>();
     /**
      * Dynamic collection of key-value pairs according to the Tag Types defined in the
      * system
      */
-    private Map<String, MultilingualStringValueArray> tags;
+    private Map<String, MultilingualStringValueArray> tags = new HashMap<>();
     /**
      * Date and time represented as epoch. For VOD – since when the asset is
      * available in the catalog. For EPG/Linear – when the program is aired (can be
@@ -429,9 +431,9 @@ public abstract class Asset extends ObjectBase {
         this.type = asset.getType();
         this.typeDescription = asset.getTypeDescription();
         this.name = asset.getName();
-        this.multilingualName.addAll(asset.getMultilingualName());
+        this.multilingualName.addAll(asset.getMultilingualName() != null ? asset.getMultilingualName() : new ArrayList<TranslationToken>());
         this.description = asset.getDescription();
-        this.multilingualDescription.addAll(asset.getMultilingualDescription());
+        this.multilingualDescription.addAll(asset.getMultilingualDescription() != null ? asset.getMultilingualDescription() : new ArrayList<TranslationToken>());
         this.images.addAll(asset.getImages());
         this.mediaFiles.addAll(asset.getMediaFiles());
         this.metas.putAll(asset.getMetas());

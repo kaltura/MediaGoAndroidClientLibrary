@@ -292,6 +292,10 @@ public class LiveAsset extends MediaAsset {
 		super();
 	}
 
+	public LiveAsset(MediaAsset asset) {
+		super(asset);
+	}
+
 	public LiveAsset(Asset asset) {
 		super(asset);
 	}
